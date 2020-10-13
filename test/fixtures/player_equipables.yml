@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  equipped: false
+  player: one
+  equipable: one
+
+two:
+  equipped: false
+  player: two
+  equipable: two

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stamina_change: 1
+  money_change: 1
+  stat_change: 1
+  progress_toward_job: 1
+  type: 
+
+two:
+  stamina_change: 1
+  money_change: 1
+  stat_change: 1
+  progress_toward_job: 1
+  type: 

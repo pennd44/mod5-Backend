@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  current_health: 1
+  max_health: 1
+  attack: 1
+  defense: 1
+  win_money: 1
+  loss_money: 1
+
+two:
+  name: MyString
+  current_health: 1
+  max_health: 1
+  attack: 1
+  defense: 1
+  win_money: 1
+  loss_money: 1

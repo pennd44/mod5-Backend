@@ -1,7 +1,7 @@
 class CreateEnemies < ActiveRecord::Migration[6.0]
   def change
     create_table :enemies do |t|
-      t.string :name
+      t.string :username
       t.string :avatar
       t.integer :current_health, default: 1
       t.integer :max_health, default: 1

@@ -1,6 +1,7 @@
 class CreateJobs < ActiveRecord::Migration[6.0]
   def change
     create_table :jobs do |t|
+      t.string :battle_bg
       t.integer :current_health, default: 0
       t.integer :max_health, default: 0
       t.integer :attack, default: 0

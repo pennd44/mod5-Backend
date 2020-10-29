@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_10_14_004943) do
   end
 
   create_table "enemies", force: :cascade do |t|
-    t.string "name"
+    t.string "username"
     t.string "avatar"
     t.integer "current_health", default: 1
     t.integer "max_health", default: 1
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_10_14_004943) do
     t.integer "loss_xp", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "job_id"
+    t.bigint "job_id", null: false
     t.index ["job_id"], name: "index_enemies_on_job_id"
   end
 
@@ -139,6 +139,7 @@ ActiveRecord::Schema.define(version: 2020_10_14_004943) do
   end
 
   create_table "jobs", force: :cascade do |t|
+    t.string "battle_bg"
     t.integer "current_health", default: 0
     t.integer "max_health", default: 0
     t.integer "attack", default: 0
@@ -188,6 +189,7 @@ ActiveRecord::Schema.define(version: 2020_10_14_004943) do
   end
 
   create_table "maps", force: :cascade do |t|
+    t.string "battle_bg"
     t.string "name"
     t.string "image"
     t.datetime "created_at", precision: 6, null: false

@@ -30,20 +30,20 @@ class Player < ApplicationRecord
         #        end
         #     end
         # end
-        return self.username
+        # return self.username
 
 
-        # keys = self.attributes.keys.select do |key|
-        #     self.equipped_items.any?{|pitem| pitem.item.attributes.include?(key)} && key != id && key != created_at && key != updated_at
-        # end
+        keys = self.attributes.keys.select do |key|
+            self.equipped_items.any?{|pitem| pitem.item.attributes.include?(key)} && key != id && key != created_at && key != updated_at
+        end
 
-        # adjusted_stats=Hash[keys.map{|key| [key, self.send(key)]}]
+        adjusted_stats=Hash[keys.map{|key| [key, self.send(key)]}]
 
-        # self.equipped_items.each do |eitem|
-        #     itemstats=Hash[keys.map{|key| [key, eitem.item.send(key)]}]
-        #    adjusted_stats=adjusted_stats.merge(itemstats){|key, oldval, newval| newval+oldval}
-        # end
-        # return adjusted_stats
+        self.equipped_items.each do |eitem|
+            itemstats=Hash[keys.map{|key| [key, eitem.item.send(key)]}]
+           adjusted_stats=adjusted_stats.merge(itemstats){|key, oldval, newval| newval+oldval}
+        end
+        return adjusted_stats
 
     end
 end

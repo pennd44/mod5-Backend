@@ -24,6 +24,8 @@ class Api::V1::PlayersController < ApplicationController
     def update
         player=Player.find(params[:id])
         player.update(player_params)
+        ActionCable.server.broadcast 'players_channel', player
+      head :ok
         render json: player, methods: [:adjusted_stats, :equipped_items, :consumables]
     end
 
